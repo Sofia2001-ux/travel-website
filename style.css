@@ -1,0 +1,1213 @@
+/* ==========================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================== */
+:root {
+    --gold: #F5B316;
+    --black: #111111;
+    --white: #FFFFFF;
+    --light-gray: #F5F5F5;
+    --font-main: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--light-gray);
+    overflow-x: hidden; 
+}
+
+/* ==========================================
+   2. NAVBAR DESKTOP DEFAULT STYLING
+   ========================================== */
+.main-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:transparent; 
+    z-index: 1000;
+    border-bottom: none; 
+    box-shadow: none;
+}
+.main-navbar.scrolled{
+    background-color: var(--white) !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.main-navbar.scrolled .nav-link {
+    color: var(--black) !important; 
+}
+
+/* Scroll hone par active line ka behavior manage karne ke liye */
+.main-navbar.scrolled .nav-link:hover,
+.main-navbar.scrolled .nav-link.active {
+    color: var(--gold) !important;
+}
+
+/* Scroll hone par hamburger lines bhi black ho jayengi */
+.main-navbar.scrolled .hamburger-btn .bar {
+    background-color: var(--black) !important;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 24px; /* Default desktop padding fixed */
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-logo span {
+    color: var(--gold);
+}
+
+.logo-img {
+    height: 60px;         
+    width: auto;          
+    display: block;
+    object-fit: contain;  
+    transition: all 0.3s ease-in-out; 
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--white) !important;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, 
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link:hover, 
+.nav-link.active {
+    color: var(--gold);
+}
+
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+    outline: none;
+}
+
+.hamburger-btn .bar {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ==========================================
+   3. HERO SECTION & FLOATING CARD STYLING
+   ========================================== */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url('hero-bg.jpg'); /* Folder path auto fixed */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.05), rgba(0,0,0,0.12));
+    z-index: 1;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-main-content {
+    align-self: flex-end; 
+    text-align: left;
+    max-width: 750px !important;
+    margin-top: 80px;
+    
+}
+
+.hero-tagline {
+    color: var(--light-gray);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.hero-title {
+    color: var(--white);
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    
+}
+
+.avatar-group {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    background-color: #444;
+    border: 2px solid var(--black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -10px;
+    font-size: 0.8rem;
+    color: var(--white);
+}
+/* Number Block Styling */
+.stats-number {
+    display: inline-block;
+    color: var(--gold); /* Pure gold color fix */
+    font-size: 2rem;    /* Size ko compact kiya */
+    font-weight: 700;
+}
+
+.stats-plus {
+    color: var(--gold); /* K+ ka color bhi gold */
+    font-size: 2rem;    /* Dono ka size bilkul barabar */
+    font-weight: 700;
+}
+.stats-label{
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* ✨ PROFESSIONAL SMOOTH LIFT EFFECT */
+.floating-stats-card {
+    position: absolute;
+    bottom: 50px;
+    left: 24px;
+    background-color: rgba(17, 17, 17, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 20px;       /* Padding thodi tight ki */
+    border-radius: 12px;
+    width: 200px;        /* Card ka total size compact kiya */
+    
+    /* Neeche se upar lift hone wali CSS animation */
+    animation: slideUpLift 1s cubic-bezier(0.1, 1, 0.1, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes slideUpLift {
+    0% {
+        transform: translateY(30px); /* 30px neeche se shuru hoga */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);    /* Smoothly upar aayega */
+        opacity: 1;
+    }
+}
+/* ==========================================
+   5. SEARCH / BOOKING BAR STYLING
+   ========================================== */
+.search-booking-bar {
+    background-color: var(--black);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 24px;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 40px; /* Hero content se nichay space */
+    border-radius: 8px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.search-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.search-input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.search-input-group label {
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.search-input-group label .icon {
+    margin-right: 4px;
+}
+
+.search-input-group input,
+.search-input-group select {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--white);
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input-group input:focus,
+.search-input-group select:focus {
+    border-color: var(--gold);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Date Input internal icon white color fix */
+.search-input-group input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* Dropdown Options Color */
+.search-input-group select option {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* Search Submit Button */
+.search-submit-btn {
+    background-color: var(--gold);
+    color: var(--black);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    align-self: flex-end; /* Label line ke barabar lane ke liye */
+    height: 48px;
+}
+
+.search-submit-btn:hover {
+    background-color: var(--white);
+    transform: translateY(-2px);
+}
+
+
+
+/* ==========================================
+   4. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================== */
+
+/* Tablet Screens (Max-width: 992px) */
+@media screen and (max-width:992px) {
+    .hero-title {
+        font-size: 3.8rem; 
+    }
+}
+
+/* Mobile Screens (Max-width: 768px) */
+@media screen and (max-width: 1024px) {
+    /* Navbar Mobile Cleanup */
+    .nav-container {
+        padding: 15px 20px; 
+    }
+
+    .logo-img {
+        height: 45px;     
+    }
+
+    .hamburger-btn {
+        display: flex; 
+        align-items: center;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(17, 17, 17, 0.98);
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+        max-height: 0; 
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+    }
+
+    .nav-menu.open {
+        max-height: 400px; 
+    }
+
+    .nav-link {
+        display: block;
+        padding: 16px 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .hamburger-btn.open .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+        background-color: var(--gold);
+    }
+    .hamburger-btn.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-btn.open .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: var(--gold);
+    }
+
+    /* Hero Section Mobile Cleanup */
+    .hero-container {
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .hero-main-content {
+        text-align: center;
+        align-self: center;
+        margin-top: 100px;
+    }
+
+    .hero-title {
+        font-size: 2.8rem; 
+    }
+
+    .hero-tagline {
+        font-size: 1rem;
+    }
+
+    .floating-stats-card {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin: 40px auto 0 auto;
+        width: 100%;
+        max-width: 260px;
+        text-align: center;
+    }
+
+    .avatar-group {
+        justify-content: center;
+    }
+}
+/* Desktop and Mobile Shared Styling */
+.nav-cta-btn {
+    background-color: var(--gold);
+    color: var(--black);
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    white-space: nowrap; /* Text ko break hone se bachayega */
+    display: inline-block;
+}
+
+/* Mobile Alignment Fix */
+@media screen and (max-width: 1024px) {
+    /* Logo, Button aur Hamburger ko ek line mein barabar karne ke liye */
+    .nav-container {
+        display: flex;
+        align-items: center;
+        gap: 15px; 
+    }
+    .nav-logo{
+        order: 1;
+    }
+    
+    /* Button ka size mobile par thoda compact ho jayega */
+    .nav-cta-btn {
+        order: 2;
+        padding: 8px 16px;
+        font-size: 0.8rem;
+        margin-left: auto; /* Is se button khud ba khud right side par hamburger ke sath chipak jayega */
+    }
+    .hamburger-btn{
+        order: 3;
+    }
+        /* Search Bar Mobile Responsive */
+    .search-booking-bar {
+        max-width: 100%;
+        margin-top: 30px;
+        padding: 20px;
+    }
+
+    .search-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .search-input-group {
+        width: 100%;
+    }
+
+    .search-submit-btn {
+        width: 100%;
+        align-self: center;
+        margin-top: 10px;
+    }
+
+}
+/* ==========================================
+   7. POPULAR PACKAGES STYLING
+   ========================================== */
+.packages-section {
+    padding: 80px 24px;
+    background-color: var(--white);
+    width: 100%;
+}
+
+.packages-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Heading Box */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header .sub-title {
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.section-header .main-title {
+    color: var(--black);
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+.section-header .main-title span {
+    color: var(--gold);
+}
+
+/* Layout Grid */
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards side-by-side */
+    gap: 30px;
+}
+
+.package-card {
+    background-color: var(--light-gray);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Image styling inside card */
+.package-img-box {
+    position: relative;
+    height: 220px;
+    width: 100%;
+}
+
+.package-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.package-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--gold);
+    color: var(--black);
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+/* Content Area inside card */
+.package-content {
+    padding: 24px;
+}
+
+.package-title {
+    font-size: 1.25rem;
+    color: var(--black);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.package-days {
+    color: #888;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.package-desc {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Card footer details */
+.package-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding-top: 15px;
+}
+
+.package-price {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--black);
+}
+
+.book-btn {
+    background-color: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: var(--gold);
+    color: var(--black);
+}
+.explore-more-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; /* Cards se niche space */
+}
+
+.explore-more-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--black);
+    border: 2px solid var(--black);
+    padding: 12px 30px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-align: center;
+    white-space: nowrap;
+    width: auto !important;
+}
+
+.explore-more-btn:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+
+/* Mobile Media Query Code Integration */
+@media screen and (max-width: 992px) {
+    .packages-grid {
+        grid-template-columns: repeat(2, 1fr); /* Tablet par 2 cards ek sath */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .packages-grid {
+        grid-template-columns: 1fr; /* Mobile par stack ho jayenge */
+    }
+    .section-header .main-title {
+        font-size: 1.8rem;
+    }
+}
+/* ==========================================
+   8. QUICK INQUIRY FORM STYLING (DESKTOP)
+   ========================================== */
+.inquiry-section {
+    padding: 80px 24px;
+    background-color: var(--light-gray);
+    width: 100%;
+}
+
+.inquiry-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Left text, right form box layout */
+    gap: 50px;
+    align-items: center;
+}
+
+.inquiry-sub {
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.inquiry-title {
+    color: var(--black);
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.inquiry-title span {
+    color: var(--gold);
+}
+
+.inquiry-text {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Form Box */
+.inquiry-form-box {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.main-inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row input, 
+.main-inquiry-form textarea {
+    width: 100%;
+    background-color: var(--light-gray);
+    border: 1px solid rgba(0,0,0,0.05);
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-row input:focus, 
+.main-inquiry-form textarea:focus {
+    border-color: var(--gold);
+    background-color: var(--white);
+    box-shadow: 0 0 8px rgba(245, 179, 22, 0.15);
+}
+
+/* Submit Button */
+.form-submit-btn {
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    padding: 14px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+}
+
+.form-submit-btn:hover {
+    background-color: var(--gold);
+    color: var(--black);
+}
+
+
+/* ==========================================
+   ⚡ MOBILE MEDIA QUERY (FOR INQUIRY SECTION ONLY)
+   ========================================== */
+@media screen and (max-width: 1024px) {
+    .inquiry-section {
+        padding: 50px 20px;
+    }
+    
+    .inquiry-container {
+        grid-template-columns: 1fr; /* Mobile screen par text aur form upar niche ho jayenge */
+        gap: 30px;
+    }
+    
+    .inquiry-title {
+        font-size: 1.8rem;
+    }
+    
+    .form-row {
+        flex-direction: column; /* Input fields ek ke niche ek aayengi screen tight hone par */
+        gap: 15px;
+    }
+    
+    .inquiry-form-box {
+        padding: 25px 20px; /* Choti screen par inner spacing kam kar di */
+    }
+}
+/* ==========================================
+   9. MAIN WEBSITE FOOTER (DESKTOP)
+   ========================================== */
+.main-footer {
+    background-color: var(--black);
+    color: var(--light-gray);
+    padding: 70px 24px 0 24px;
+    border-top: 3px solid var(--gold);
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr; /* Columns width layout */
+    gap: 40px;
+    padding-bottom: 50px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo {
+    color: var(--white);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.footer-logo span {
+    color: var(--gold);
+}
+
+.footer-desc {
+    color: #999999;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-heading {
+    color: var(--white);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+/* Heading ke niche choti gold underline decorative effect */
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    height: 2px;
+    background-color: var(--gold);
+}
+
+/* Lists styling definitions */
+.footer-links-list, 
+.footer-contact-list {
+    list-style: none;
+}
+
+.footer-links-list li {
+    margin-bottom: 10px;
+}
+
+.footer-links-list a {
+    color: #999999;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-links-list a:hover {
+    color: var(--gold);
+    padding-left: 5px; /* Slide effect on hover */
+}
+
+.footer-contact-list li {
+    color: #999999;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.footer-contact-list li span {
+    color: var(--gold);
+}
+
+/* Bottom Strip Copyright bar */
+.footer-bottom-strip {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px 24px;
+    text-align: center;
+}
+
+.footer-bottom-strip p {
+    color: #666666;
+    font-size: 0.85rem;
+}
+
+
+.footer-social-links a:hover {
+    color: #f5b316 !important; 
+    text-decoration: underline !important;
+}
+
+
+
+/* ==========================================
+   ⚡ MOBILE MEDIA QUERY (FOR FOOTER SECTION ONLY)
+   ========================================== */
+@media screen and (max-width: 1024px) {
+    .main-footer {
+        padding: 50px 20px 0 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr; /* Mobile screen par columns vertical layers ban jayenge */
+        gap: 35px;
+        padding-bottom: 40px;
+    }
+
+    .footer-heading {
+        margin-bottom: 15px;
+    }
+
+    .footer-bottom-strip {
+        padding: 15px 20px;
+    }
+}
+/* ==========================================
+   12. SOLID WHITE NAVBAR FOR INNER PAGES (DESKTOP)
+   ========================================== */
+.inner-main-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--white); /* Permanent solid white background look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    z-index: 1000;
+}
+
+.inner-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 24px;
+}
+
+.inner-logo-img {
+    height: 50px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.inner-nav-menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.inner-nav-link {
+    color: var(--black); /* Strictly black text color code representation */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.3s ease;
+}
+
+.inner-nav-link:hover,
+.inner-nav-link.active {
+    color: var(--gold);
+}
+
+.inner-nav-cta {
+    background-color: var(--gold);
+    color: var(--black);
+    padding: 10px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: transform 0.2s ease;
+}
+.inner-nav-cta:hover { transform: scale(1.05); }
+/* ---- Sliding Underline Animation ---- */
+.inner-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;                             /* Line strictly left side se nikle gi */
+    width: 0;                            /* Shuru me line gayab rahe gi */
+    height: 2px;                         /* Line ki motai */
+    background-color: var(--gold);       /* Gold color line */
+    transition: width 0.3s ease-in-out;  /* Smooth left-to-right sliding speed */
+}
+
+/* Hover karne par ya active page par line 100% load ho jaye gi */
+.inner-nav-link:hover::after,
+.inner-nav-link.active::after {
+    width: 100%;
+}
+
+.inner-hamburger-btn {
+    display: none; /* Desktop par hidden rahega */
+    background: none;
+    border: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.inner-bar {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--black); /* Hamburger lines permanently black */
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* ==========================================
+   ⚡ TABLET & MOBILE MEDIA QUERY FOR INNER NAVBAR
+   ========================================== */
+@media screen and (max-width: 1024px) { /* 💻 Laptop se niche hi hamburger trigger ho jayega (Tablet Included) */
+    .inner-hamburger-btn {
+        display: flex; /* Tablet screen sizes par hamburger show ho jayega */
+        order: 3;
+    }
+
+    .inner-nav-cta {
+        order: 2;
+        margin-left: auto;
+        margin-right: 15px;
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+
+    .inner-nav-logo { order: 1; }
+
+    /* Dropdown mobile structural overlay layer definition */
+    .inner-nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(17, 17, 17, 0.98); /* Open hone par dropdown modern dark black */
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+    }
+
+    /* Class toggle behaviors activation link look */
+    .inner-nav-menu.open {
+        max-height: 400px;
+    }
+
+    .inner-nav-link {
+        display: block;
+        padding: 16px 0;
+        width: 100%;
+        color: var(--white); /* Dropdown box ke andar white links dikhengi contrast k liye */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Hamburger bars cross animation configurations */
+    .inner-hamburger-btn.open .inner-bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+        background-color: var(--gold);
+    }
+    .inner-hamburger-btn.open .inner-bar:nth-child(2) { opacity: 0; }
+    .inner-hamburger-btn.open .inner-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: var(--gold);
+    }
+}
+/* Purani heading ko flex de kar badge ko right side par jorna */
+.hero-title {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    width: auto !important;
+}
+
+/* Sirf aur sirf badge ki apni setting aur orange ring border */
+.explore-badge-container {
+    position: relative !important;
+    width: 95px !important;  
+    height: 95px !important;
+    display: inline-block !important;
+    background-color: #111111 !important; 
+    border-radius: 50% !important;
+    
+    /* Mentor jaisi orange solid line */
+    border: 3px solid #f5b316 !important; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    margin-left: 10px !important;
+}
+
+/* Badge ke ghumne ki animation */
+.rotating-text-svg {
+    width: 100% !important;
+    height: 100% !important;
+    animation: spinBadgeTextSaad 14s linear infinite !important;
+}
+
+.center-badge-icon {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    color: #f5b316 !important;
+    font-size: 1.1rem !important;
+}
+
+@keyframes spinBadgeTextSaad {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+/* ===================================================
+   TEXT KO MARGIN SE NICHE CARD KE SAMNE LANE KA FIX
+   =================================================== */
+.hero-main-content {
+    margin-top: 240px !important; /* Is line se text chhat se niche khisat kar card ke samne aa jayega */
+}
+/* ===================================================
+   MOBILE AND TABLET RESPONSIVE FIX (Media Query)
+   =================================================== */
+@media screen and (max-width: 768px) {
+    /* Mobile par margin kam karne ke liye taake text card par na gire */
+    .hero-main-content {
+        margin-top: 40px !important; 
+    }
+
+    /* Mobile screen ke mutabiq heading ka size thoda normal karne ke liye */
+    .hero-title {
+        font-size: 2.2rem !important;
+        flex-wrap: wrap; /* Agar mobile par screen choti ho to badge munasib adjust ho jaye */
+        gap: 10px !important;
+    }
+
+    /* Mobile par badge ka size thoda chota karne ke liye */
+    .explore-badge-container {
+        width: 75px !important;
+        height: 75px !important;
+    }
+}

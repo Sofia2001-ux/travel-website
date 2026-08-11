@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>travel-with-saad</title>
+    <link rel="stylesheet" href="css/all.min.css"> 
+     <link rel="stylesheet" href="style.css">
+     <style>
+    /* ==========================================
+   GALLERY HERO
+   ========================================== */
+
+.gallery-page-hero {
+    padding: 160px 24px 60px;
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.1)
+        ),
+        url("hunza valley/Attabad Lake.jpg");
+
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    width: 100%;
+    color: var(--white);
+}
+
+.gallery-page-hero h1 {
+    color: #fff !important;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.gallery-page-hero h1 span {
+    color: var(--gold) !important;
+}
+
+.gallery-page-hero p {
+    color: #e5e5e5 !important;
+    font-size: 1.05rem;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   GALLERY SECTION
+   ========================================== */
+
+.gallery-full-section {
+    padding: 60px 24px 90px;
+    background-color: var(--white);
+    width: 100%;
+    min-height: 80vh;
+}
+
+.gallery-thumbnail-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+
+/* ==========================================
+   ALBUM CARD
+   ========================================== */
+
+.destination-album-card {
+    position: relative;
+    height: 320px;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.08);
+
+    cursor: pointer;
+    background-color: var(--light-gray);
+}
+
+.album-main-img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s
+        cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.destination-album-card:hover .album-main-img {
+    transform: scale(1.08);
+}
+
+
+/* ==========================================
+   CARD OVERLAY
+   ========================================== */
+
+.album-overlay-info {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+   /* background:
+        linear-gradient(
+            to top,
+            rgba(17, 17, 17, 0.95) 0%,
+            rgba(17, 17, 17, 0.25) 100%
+        );
+*/
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 25px;
+
+    transition: background 0.3s ease;
+}
+
+/*.destination-album-card:hover .album-overlay-info {
+    background:
+        linear-gradient(
+            to top,
+            rgba(17, 17, 17, 0.98) 0%,
+            rgba(17, 17, 17, 0.4) 100%
+        );
+}*/
+
+.album-overlay-info h3 {
+    color: var(--white);
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.destination-album-card:hover
+.album-overlay-info h3 {
+    color: var(--gold);
+}
+
+.album-overlay-info p {
+    color: #ccc;
+    font-size: 0.85rem;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+/* ==========================================
+   PHOTO COUNT
+   ========================================== */
+
+.photos-count-badge {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    background-color: rgba(245, 179, 22, 0.95);
+
+    color: var(--black);
+
+    padding: 6px 14px;
+
+    border-radius: 30px;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.15);
+
+    z-index: 3;
+}
+
+
+/* =================================================
+   FULLSCREEN LIGHTBOX
+   ================================================= */
+
+.lightbox-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(5, 5, 5, 0.98);
+
+    z-index: 10000;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    user-select: none;
+}
+
+
+/* ==========================================
+   LIGHTBOX WRAPPER
+   ========================================== */
+
+.lightbox-wrapper {
+
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   IMAGE FRAME
+   ========================================== */
+
+.lightbox-image-frame {
+
+    position: relative;
+
+    width: 92vw;
+    height: 88vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+}
+
+
+/* ==========================================
+   LIGHTBOX IMAGE
+   ========================================== */
+
+.lightbox-active-img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.55);
+
+    animation:
+        zoomEffect 0.25s ease-in-out;
+}
+
+
+/* ==========================================
+   CLOSE BUTTON
+   ========================================== */
+
+.lightbox-close-btn {
+
+    position: absolute;
+
+    top: 22px;
+    right: 25px;
+
+    width: 50px;
+    height: 50px;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    color: var(--white);
+
+    font-size: 2.2rem;
+
+    line-height: 1;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 10005;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.lightbox-close-btn:hover {
+
+    background: var(--gold);
+
+    color: var(--black);
+}
+
+
+/* ==========================================
+   NEXT / PREVIOUS BUTTONS
+   ========================================== */
+
+.lightbox-nav-arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 54px;
+    height: 54px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 0, 0, 0.45);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.25);
+
+    color: var(--white);
+
+    font-size: 1.5rem;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 10004;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.lightbox-nav-arrow:hover {
+
+    background: var(--gold);
+
+    color: var(--black);
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+
+/* Buttons IMAGE کے اوپر */
+
+.left-arrow {
+    left: 4vw;
+}
+
+.right-arrow {
+    right: 4vw;
+}
+
+
+/* ==========================================
+   CAPTION
+   ========================================== */
+
+.lightbox-caption-strip {
+
+    position: absolute;
+
+    bottom: 18px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: auto;
+
+    max-width: 80%;
+
+    padding: 8px 18px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.55);
+
+    color: var(--white);
+
+    text-align: center;
+
+    font-size: 0.9rem;
+
+    z-index: 10005;
+
+    backdrop-filter: blur(6px);
+}
+
+.lightbox-caption-strip span {
+
+    color: var(--gold);
+
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   ANIMATION
+   ========================================== */
+
+@keyframes zoomEffect {
+
+    from {
+        transform: scale(0.97);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media screen and (max-width: 1024px) {
+
+    .gallery-thumbnail-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .destination-album-card {
+        height: 280px;
+    }
+
+    .gallery-page-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .lightbox-image-frame {
+        width: 94vw;
+        height: 86vh;
+    }
+
+    .lightbox-nav-arrow {
+        width: 48px;
+        height: 48px;
+    }
+
+    .left-arrow {
+        left: 20px;
+    }
+
+    .right-arrow {
+        right: 20px;
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media screen and (max-width: 650px) {
+
+    .gallery-thumbnail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-full-section {
+        padding: 40px 20px;
+    }
+
+    .destination-album-card {
+        height: 250px;
+    }
+
+    .gallery-page-hero {
+        padding:
+            130px
+            20px
+            50px;
+    }
+
+    .gallery-page-hero h1 {
+        font-size: 2rem;
+    }
+
+    .gallery-page-hero p {
+        font-size: 0.95rem;
+    }
+
+    .lightbox-image-frame {
+        width: 100vw;
+        height: 82vh;
+
+        border-radius: 0;
+    }
+
+    .lightbox-active-img {
+        border-radius: 0;
+    }
+
+    .lightbox-nav-arrow {
+        width: 44px;
+        height: 44px;
+
+        font-size: 1.2rem;
+
+        background:
+            rgba(0, 0, 0, 0.55);
+    }
+
+    .left-arrow {
+        left: 12px;
+    }
+
+    .right-arrow {
+        right: 12px;
+    }
+
+    .lightbox-close-btn {
+        top: 15px;
+        right: 15px;
+
+        width: 44px;
+        height: 44px;
+
+        font-size: 1.9rem;
+    }
+
+    .lightbox-caption-strip {
+        bottom: 12px;
+
+        max-width: 90%;
+
+        font-size: 0.8rem;
+    }
+}
+</style>
+</head>
+<body>
+  <!-- ==========================================
+     SOLID WHITE NAVIGATION BAR (FOR INNER PAGES)
+     ========================================== -->
+<header class="inner-main-navbar">
+    <div class="inner-nav-container">
+        <!-- Logo Link -->
+        <a href="index.html" class="inner-nav-logo">
+            <img src="logo.png" alt="Travel With Saad Logo" class="inner-logo-img">
+        </a>
+        
+        <!-- Navigation Menu Links -->
+        <nav class="inner-nav-menu" id="innerNavMenu">
+            <a href="index.html" class="inner-nav-link">Home</a>
+            <a href="about.html" class="inner-nav-link">About Us</a>
+            <a href="packages.html" class="inner-nav-link">Tour Packages</a>
+            <a href="gallery.html" class="inner-nav-link">Gallery</a>
+            <a href="blog.html" class="inner-nav-link">Blog</a>
+            <a href="contact.html" class="inner-nav-link">Contact Us</a>
+        </nav>
+
+        <!-- Right Side Start Exploring Button -->
+        <a href="contact.html" class="inner-nav-cta">Start Exploring</a>
+        
+        <!-- Hamburger Button (Tablet + Mobile) -->
+        <button class="inner-hamburger-btn" id="innerMenuBtn" aria-label="Toggle Navigation">
+            <span class="inner-bar"></span>
+            <span class="inner-bar"></span>
+            <span class="inner-bar"></span>
+        </button>
+    </div>
+</header>
+<!-- ==========================================
+     GALLERY PAGE HERO
+     ========================================== -->
+<section class="gallery-page-hero">
+    <h1>Our Travel <span>Visual Albums</span></h1>
+    <p>
+        Explore Pakistan's most spectacular views.
+        Click on any destination to explore its photo album.
+    </p>
+</section>
+
+
+<!-- ==========================================
+     DESTINATION ALBUM GRID
+     ========================================== -->
+<section class="gallery-full-section">
+
+    <div class="gallery-thumbnail-grid">
+
+        <!-- Hunza -->
+        <div class="destination-album-card" onclick="openLightbox('hunza')">
+            <img src="hunza valley/eagle nest.jpg"
+                 alt="Hunza Valley"
+                 class="album-main-img">
+
+            <div class="photos-count-badge">📁 6 Photos</div>
+
+            <div class="album-overlay-info">
+                <h3>Hunza Valley</h3>
+                <p>📍 Gilgit Baltistan, Pakistan</p>
+            </div>
+        </div>
+
+
+        <!-- Skardu -->
+        <div class="destination-album-card" onclick="openLightbox('skardu')">
+            <img src="skardu/skardu 6.jfif"
+                 alt="Skardu"
+                 class="album-main-img">
+
+            <div class="photos-count-badge">📁 6 Photos</div>
+
+            <div class="album-overlay-info">
+                <h3>Skardu Adventure</h3>
+                <p>📍 Baltistan, Pakistan</p>
+            </div>
+        </div>
+
+
+        <!-- Swat -->
+        <div class="destination-album-card" onclick="openLightbox('swat')">
+            <img src="swat/swat 3.jfif"
+                 alt="Swat Valley"
+                 class="album-main-img">
+
+            <div class="photos-count-badge">📁 6 Photos</div>
+
+            <div class="album-overlay-info">
+                <h3>Swat Valley</h3>
+                <p>📍 Khyber Pakhtunkhwa, Pakistan</p>
+            </div>
+        </div>
+
+
+        <!-- Naran -->
+        <div class="destination-album-card" onclick="openLightbox('naran')">
+            <img src="naran/naran 3.jpg"
+                 alt="Naran Kaghan"
+                 class="album-main-img">
+
+            <div class="photos-count-badge">📁 6 Photos</div>
+
+            <div class="album-overlay-info">
+                <h3>Naran Kaghan</h3>
+                <p>📍 Khyber Pakhtunkhwa, Pakistan</p>
+            </div>
+        </div>
+
+
+        <!-- Kashmir -->
+        <div class="destination-album-card" onclick="openLightbox('kashmir')">
+            <img src="kashmir/kashmir 1.jfif"
+                 alt="Azad Kashmir"
+                 class="album-main-img">
+
+            <div class="photos-count-badge">📁 6 Photos</div>
+
+            <div class="album-overlay-info">
+                <h3>Azad Kashmir</h3>
+                <p>📍 Neelum Valley, Pakistan</p>
+            </div>
+        </div>
+
+
+        <!-- Murree -->
+        <div class="destination-album-card" onclick="openLightbox('murree')">
+            <img src="murree/murree 1.jfif"
+                 alt="Murree Hills"
+                 class="album-main-img">
+
+            <div class="photos-count-badge">📁 6 Photos</div>
+
+            <div class="album-overlay-info">
+                <h3>Murree Hills</h3>
+                <p>📍 Galyat Range, Pakistan</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     FULLSCREEN LIGHTBOX
+     ========================================== -->
+<div class="lightbox-modal" id="galleryLightbox">
+
+    <div class="lightbox-wrapper">
+
+        <!-- Close -->
+        <button class="lightbox-close-btn"
+                onclick="closeLightbox()"
+                aria-label="Close">
+            &times;
+        </button>
+
+
+        <!-- Image area -->
+        <div class="lightbox-image-frame">
+
+            <img src=""
+                 alt="Travel destination"
+                 id="lightboxImg"
+                 class="lightbox-active-img">
+
+        </div>
+
+
+        <!-- Previous -->
+        <button class="lightbox-nav-arrow left-arrow"
+                onclick="changeSlide(-1)"
+                aria-label="Previous image">
+            &#10094;
+        </button>
+
+
+        <!-- Next -->
+        <button class="lightbox-nav-arrow right-arrow"
+                onclick="changeSlide(1)"
+                aria-label="Next image">
+            &#10095;
+        </button>
+
+
+        <!-- Caption -->
+        <div class="lightbox-caption-strip"
+             id="lightboxCaption">
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+     MAIN WEBSITE FOOTER SECTION
+     ========================================== -->
+<footer class="main-footer">
+    <div class="footer-container">
+        
+        <!-- Column 1: Brand & Logo Info -->
+        <div class="footer-col brand-info">
+            <h3 class="footer-logo">Travel With <span>Saad</span></h3>
+            <p class="footer-desc">Your premium travel partner in Pakistan. We curate unforgettable premium luxury tours across the most beautiful landscapes.</p>
+            
+          
+<!-- Is code se icons aur text dono saaf likhe hue nazar aaein ge -->
+<div class="footer-social-links" style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+    
+    <!-- 1. Facebook Link -->
+    <a href="https://www.facebook.com/iamrajasaad" target="_blank" aria-label="Facebook" style="color: #ffffff; font-size: 0.95rem; text-decoration: none; font-family: sans-serif; display: flex; align-items: center; gap: 10px;">
+        <i class="fab fa-facebook-f" style="color: #f5b316; width: 16px;"></i> Facebook
+    </a>
+    
+    <!-- 2. Instagram Link -->
+    <a href="https://instagram.com" target="_blank" aria-label="Instagram" style="color: #ffffff; font-size: 0.95rem; text-decoration: none; font-family: sans-serif; display: flex; align-items: center; gap: 10px;">
+        <i class="fab fa-instagram" style="color: #f5b316; width: 16px;"></i> Instagram
+    </a>
+    
+    <!-- 3. LinkedIn Link -->
+    <a href="https://www.linkedin.com/company/travel-with-saad/" target="_blank" aria-label="LinkedIn" style="color: #ffffff; font-size: 0.95rem; text-decoration: none; font-family: sans-serif; display: flex; align-items: center; gap: 10px;">
+        <i class="fab fa-linkedin-in" style="color: #f5b316; width: 16px;"></i> LinkedIn
+    </a>
+
+</div>
+
+
+        </div>
+
+        <!-- Column 2: Quick Links Navigation -->
+        <div class="footer-col links-info">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="packages.html">Tour Packages</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Real Direct Contact details -->
+        <div class="footer-col contact-info">
+            <h4 class="footer-heading">Contact Details</h4>
+            <ul class="footer-contact-list">
+                <li><span>📍</span> Office 42, Blue Area, Islamabad, Pakistan</li>
+                <li><span>📞</span> +92 318 5631266</li> <!-- Mentor ka asli contact number responsibly bina list kharab kiye update kar diya -->
+                <li><span>✉️</span> info@travelwithsaad.com</li>
+                <li><span>⏰</span> Mon - Sat: 9:00 AM - 6:00 PM</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom Copyright Strip -->
+    <div class="footer-bottom-strip">
+        <p>&copy; 2026 Travel With Saad. All Rights Reserved. Designed for Internship Project.</p>
+    </div>
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

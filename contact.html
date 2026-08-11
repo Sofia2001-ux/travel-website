@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>travel-with-saad</title>
+    <link rel="stylesheet" href="css/all.min.css"> 
+     <link rel="stylesheet" href="style.css">
+     <style>
+    .contact-page-section {
+        padding: 160px 24px 90px 24px;
+        background-color: var(--white);
+        width: 100%;
+        min-height: 80vh;
+    }
+
+    .contact-page-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1.3fr; /* Left side number cards, right form */
+        gap: 50px;
+        align-items: center;
+    }
+
+    .contact-sub-tag {
+        color: var(--gold);
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+        margin-bottom: 5px;
+    }
+
+    .contact-main-heading {
+        color: var(--black);
+        font-size: 2.4rem;
+        font-weight: 800;
+        margin-bottom: 15px;
+    }
+    .contact-main-heading span { color: var(--gold); }
+
+    .contact-about-text {
+        color: #666666;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    .contact-numbers-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .num-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background-color: var(--light-gray);
+        padding: 15px;
+        border-radius: 6px;
+    }
+
+    .num-icon {
+        font-size: 1.4rem;
+        background: var(--white);
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    }
+
+    .num-item h3 { font-size: 0.95rem; color: var(--black); margin-bottom: 2px; }
+    .num-item p { font-size: 0.85rem; color: #555555; }
+
+    /* Form Design Box */
+    .contact-form-box {
+        background-color: var(--light-gray);
+        padding: 40px;
+        border-radius: 8px;
+    }
+
+    .contact-actual-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-field-row {
+        display: flex;
+        gap: 15px;
+    }
+
+    .form-field-row input,
+    .contact-actual-form textarea {
+        width: 100%;
+        background-color: var(--white);
+        border: 1px solid rgba(0,0,0,0.05);
+        padding: 12px;
+        font-size: 0.9rem;
+        border-radius: 4px;
+        outline: none;
+    }
+
+    .contact-btn {
+        background-color: var(--black);
+        color: var(--white);
+        border: none;
+        padding: 14px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .contact-btn:hover { background-color: var(--gold); color: var(--black); }
+
+    /* ⚡ RESPONSIVE MEDIA QUERIES */
+    @media screen and (max-width: 992px) {
+        .contact-page-container { grid-template-columns: 1fr; gap: 40px; }
+        .contact-page-section { padding-top: 120px; }
+    }
+    @media screen and (max-width: 600px) {
+        .form-field-row { flex-direction: column; gap: 15px; }
+        .contact-form-box { padding: 25px 20px; }
+    }
+</style>
+
+</head>
+<body>
+  <!-- ==========================================
+     SOLID WHITE NAVIGATION BAR (FOR INNER PAGES)
+     ========================================== -->
+<header class="inner-main-navbar">
+    <div class="inner-nav-container">
+        <!-- Logo Link -->
+        <a href="index.html" class="inner-nav-logo">
+            <img src="logo.png" alt="Travel With Saad Logo" class="inner-logo-img">
+        </a>
+        
+        <!-- Navigation Menu Links -->
+        <nav class="inner-nav-menu" id="innerNavMenu">
+            <a href="index.html" class="inner-nav-link">Home</a>
+            <a href="about.html" class="inner-nav-link">About Us</a>
+            <a href="packages.html" class="inner-nav-link">Tour Packages</a>
+            <a href="gallery.html" class="inner-nav-link">Gallery</a>
+            <a href="blog.html" class="inner-nav-link">Blog</a>
+            <a href="contact.html" class="inner-nav-link">Contact Us</a>
+        </nav>
+
+        <!-- Right Side Start Exploring Button -->
+        <a href="contact.html" class="inner-nav-cta">Start Exploring</a>
+        
+        <!-- Hamburger Button (Tablet + Mobile) -->
+        <button class="inner-hamburger-btn" id="innerMenuBtn" aria-label="Toggle Navigation">
+            <span class="inner-bar"></span>
+            <span class="inner-bar"></span>
+            <span class="inner-bar"></span>
+        </button>
+    </div>
+</header>
+<!-- ==========================================
+     CONTACT PAGE CONTENT WITH PHONE & FORM
+     ========================================== -->
+<section class="contact-page-section">
+    <div class="contact-page-container">
+        
+        <!-- Left Side: Yahan aapka Contact Number aur Email active nazar ayega -->
+        <div class="contact-details-box">
+            <p class="contact-sub-tag">Get In Touch</p>
+            <h2 class="contact-main-heading">Reach Out <span>To Us</span></h2>
+            <p class="contact-about-text">Have questions about our premium luxury packages? Contact our travel experts directly or send an inquiry via the form.</p>
+            
+            <div class="contact-numbers-list">
+                <div class="num-item">
+                    <span class="num-icon">📞</span>
+                    <div>
+                        <h3>Call / WhatsApp</h3>
+                        <p>+92 318 5631266</p> 
+                    </div>
+                </div>
+                <div class="num-item">
+                    <span class="num-icon">✉️</span>
+                    <div>
+                        <h3>Official Email</h3>
+                        <p>info@travelwithsaad.com</p>
+                    </div>
+                </div>
+                <div class="num-item">
+                    <span class="num-icon">📍</span>
+                    <div>
+                        <h3>Our Main Office</h3>
+                        <p>Office 42, Blue Area, Islamabad, Pakistan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="contact-form-box">
+            <form action="https://formspree.io/f/mljrjzow" method="POST" class="contact-actual-form">
+                <div class="form-field-row">
+                    <input type="text" name="name" placeholder="Your Full Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-field-row">
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                    <input type="text" name="destination" placeholder="Destination (e.g. Hunza)" required>
+                </div>
+                <textarea name="message" rows="5" placeholder="Tell us more about your travel plans..." required></textarea>
+                <button type="submit" class="contact-btn">Submit Inquiry ➔</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<!-- ==========================================
+     MAIN WEBSITE FOOTER SECTION
+     ========================================== -->
+<footer class="main-footer">
+    <div class="footer-container">
+        
+        <!-- Column 1: Brand & Logo Info -->
+        <div class="footer-col brand-info">
+            <h3 class="footer-logo">Travel With <span>Saad</span></h3>
+            <p class="footer-desc">Your premium travel partner in Pakistan. We curate unforgettable premium luxury tours across the most beautiful landscapes.</p>
+            
+          
+<!-- Is code se icons aur text dono saaf likhe hue nazar aaein ge -->
+<div class="footer-social-links" style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+    
+    <!-- 1. Facebook Link -->
+    <a href="https://www.facebook.com/iamrajasaad" target="_blank" aria-label="Facebook" style="color: #ffffff; font-size: 0.95rem; text-decoration: none; font-family: sans-serif; display: flex; align-items: center; gap: 10px;">
+        <i class="fab fa-facebook-f" style="color: #f5b316; width: 16px;"></i> Facebook
+    </a>
+    
+    <!-- 2. Instagram Link -->
+    <a href="https://instagram.com" target="_blank" aria-label="Instagram" style="color: #ffffff; font-size: 0.95rem; text-decoration: none; font-family: sans-serif; display: flex; align-items: center; gap: 10px;">
+        <i class="fab fa-instagram" style="color: #f5b316; width: 16px;"></i> Instagram
+    </a>
+    
+    <!-- 3. LinkedIn Link -->
+    <a href="https://www.linkedin.com/company/travel-with-saad/" target="_blank" aria-label="LinkedIn" style="color: #ffffff; font-size: 0.95rem; text-decoration: none; font-family: sans-serif; display: flex; align-items: center; gap: 10px;">
+        <i class="fab fa-linkedin-in" style="color: #f5b316; width: 16px;"></i> LinkedIn
+    </a>
+
+</div>
+
+
+        </div>
+
+        <!-- Column 2: Quick Links Navigation -->
+        <div class="footer-col links-info">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="packages.html">Tour Packages</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Real Direct Contact details -->
+        <div class="footer-col contact-info">
+            <h4 class="footer-heading">Contact Details</h4>
+            <ul class="footer-contact-list">
+                <li><span>📍</span> Office 42, Blue Area, Islamabad, Pakistan</li>
+                <li><span>📞</span> +92 318 5631266</li> <!-- Mentor ka asli contact number responsibly bina list kharab kiye update kar diya -->
+                <li><span>✉️</span> info@travelwithsaad.com</li>
+                <li><span>⏰</span> Mon - Sat: 9:00 AM - 6:00 PM</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom Copyright Strip -->
+    <div class="footer-bottom-strip">
+        <p>&copy; 2026 Travel With Saad. All Rights Reserved. Designed for Internship Project.</p>
+    </div>
+</footer>
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
