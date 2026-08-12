@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>travel-with-saad</title>
+    <link rel="stylesheet" href="css/all.min.css"> 
+     <link rel="stylesheet" href="style.css">
+     <style>
+        .about-page-content {
+            padding: 150px 24px 80px 24px; 
+            background-color: var(--white);
+            width: 100%;
+            min-height: 75vh;
+        }
+
+        .about-grid-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr; 
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-subtitle {
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .about-main-title {
+            color: var(--black);
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .about-main-title span {
+            color: var(--gold);
+        }
+
+        .about-paragraph {
+            color: #555555;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .about-stats-column {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px;
+        }
+
+        .about-stat-box {
+            background-color: var(--light-gray);
+            padding: 40px 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+            transition: transform 0.3s ease;
+        }
+
+        .about-stat-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-stat-box h2 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 5px;
+        }
+
+        .about-stat-box p {
+            color: #666666;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .about-stat-box.gold-box {
+            background-color: var(--gold);
+        }
+
+        /* ⚡ MOBILE & TABLET MEDIA QUERY FOR CONTENT ONLY */
+        @media screen and (max-width: 1024px) {
+            .about-page-content {
+                padding: 110px 20px 60px 20px; 
+            }
+
+            .about-grid-wrapper {
+                grid-template-columns: 1fr; 
+                gap: 40px;
+            }
+
+            .about-main-title {
+                font-size: 2.2rem;
+            }
+
+            .about-stats-column {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+  <!-- ==========================================
+     SOLID WHITE NAVIGATION BAR (FOR INNER PAGES)
+     ========================================== -->
+<header class="inner-main-navbar">
+    <div class="inner-nav-container">
+        <!-- Logo Link -->
+        <a href="index.html" class="inner-nav-logo">
+            <img src="logo.png" alt="Travel With Saad Logo" class="inner-logo-img">
+        </a>
+        
+        <!-- Navigation Menu Links -->
+        <nav class="inner-nav-menu" id="innerNavMenu">
+            <a href="index.html" class="inner-nav-link">Home</a>
+            <a href="about.html" class="inner-nav-link">About Us</a>
+            <a href="packages.html" class="inner-nav-link">Tour Packages</a>
+            <a href="gallery.html" class="inner-nav-link">Gallery</a>
+            <a href="blog.html" class="inner-nav-link">Blog</a>
+            <a href="contact.html" class="inner-nav-link">Contact Us</a>
+        </nav>
+
+        <!-- Right Side Start Exploring Button -->
+        <a href="contact.html" class="inner-nav-cta">Start Exploring</a>
+        
+        <!-- Hamburger Button (Tablet + Mobile) -->
+        <button class="inner-hamburger-btn" id="innerMenuBtn" aria-label="Toggle Navigation">
+            <span class="inner-bar"></span>
+            <span class="inner-bar"></span>
+            <span class="inner-bar"></span>
+        </button>
+    </div>
+</header>
+<!-- ==========================================
+     ABOUT US MAIN CONTENT SECTION
+     ========================================== -->
+<section class="about-page-content">
+    <div class="about-grid-wrapper">
+        
+        <!-- Left Column: Company Description -->
+        <div class="about-text-column">
+            <p class="about-subtitle">Who We Are</p>
+            <h1 class="about-main-title">We Are Passionate <br><span>Travel Experts</span></h1>
+            <p class="about-paragraph">Travel With Saad is a premium tourism company dedicated to showcasing the unmatched beauty of Pakistan. We believe that traveling is not just about visiting new places, but about creating lifelong memories and experiencing deep local cultures.</p>
+            <p class="about-paragraph">From the breathtaking heights of Hunza Valley to the serene landscapes of Skardu, our team handles every luxury detail so you can explore with absolute peace of mind.</p>
+        </div>
+
+       <!-- Right Column: Stats Blocks Grid -->
+<div class="about-stats-column">
+    <div class="about-stat-box">
+       
+        <h2><span id="touristCounter" data-target="5">0</span>+</h2>
+        <p>Years Experience</p>
+    </div>
+    <div class="about-stat-box gold-box">
+        
+        <h2><span id="touristCounter" data-target="150">0</span>+</h2>
+        <p>Successful Tours</p>
+    </div>
+    <div class="about-stat-box">
+       
+        <h2><span id="touristCounter" data-target="99">0</span>%</h2>
+        <p>Satisfied Clients</p>
+    </div>
+    <div class="about-stat-box">
+        <h2>24/7</h2>
+        <p>Guide Support</p>
+    </div>
+</div>
+
+
+    </div>
+</section>
+
+<!-- ==========================================
+     MAIN WEBSITE FOOTER SECTION
+     ========================================== -->
+<footer class="main-footer">
+    <div class="footer-container">
+        
+        <!-- Column 1: Brand & Logo Info -->
+        <div class="footer-col brand-info">
+            <h3 class="footer-logo">Travel With <span>Saad</span></h3>
+            <p class="footer-desc">Your premium travel partner in Pakistan. We curate unforgettable premium luxury tours across the most beautiful landscapes.</p>
+            
+          
+<!-- Is code se icons aur text dono saaf likhe hue nazar aaein ge -->
+<div class="footer-social-links" style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+    
+    <!-- 1. Facebook Link -->
+    <a href="https://www.facebook.com/iamrajasaad" target="_blank" aria-label="Facebook" style="color: #ffffff; font-size: 0.95rem; text-decoration: none; font-family: sans-serif; display: flex; align-items: center; gap: 10px;">
+        <i class="fab fa-facebook-f" style="color: #f5b316; width: 16px;"></i> Facebook
+    </a>
+    
+    <!-- 2. Instagram Link -->
+    <a href="https://instagram.com" target="_blank" aria-label="Instagram" style="color: #ffffff; font-size: 0.95rem; text-decoration: none; font-family: sans-serif; display: flex; align-items: center; gap: 10px;">
+        <i class="fab fa-instagram" style="color: #f5b316; width: 16px;"></i> Instagram
+    </a>
+    
+    <!-- 3. LinkedIn Link -->
+    <a href="https://www.linkedin.com/company/travel-with-saad/" target="_blank" aria-label="LinkedIn" style="color: #ffffff; font-size: 0.95rem; text-decoration: none; font-family: sans-serif; display: flex; align-items: center; gap: 10px;">
+        <i class="fab fa-linkedin-in" style="color: #f5b316; width: 16px;"></i> LinkedIn
+    </a>
+
+</div>
+
+
+        </div>
+
+        <!-- Column 2: Quick Links Navigation -->
+        <div class="footer-col links-info">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="packages.html">Tour Packages</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Real Direct Contact details -->
+        <div class="footer-col contact-info">
+            <h4 class="footer-heading">Contact Details</h4>
+            <ul class="footer-contact-list">
+                <li><span>📍</span> Office 42, Blue Area, Islamabad, Pakistan</li>
+                <li><span>📞</span> +92 318 5631266</li> <!-- Mentor ka asli contact number responsibly bina list kharab kiye update kar diya -->
+                <li><span>✉️</span> info@travelwithsaad.com</li>
+                <li><span>⏰</span> Mon - Sat: 9:00 AM - 6:00 PM</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom Copyright Strip -->
+    <div class="footer-bottom-strip">
+        <p>&copy; 2026 Travel With Saad. All Rights Reserved. Designed for Internship Project.</p>
+    </div>
+</footer>
+
+
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

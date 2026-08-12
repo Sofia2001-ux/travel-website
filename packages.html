@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>travel-with-saad</title>
+    <link rel="stylesheet" href="css/all.min.css"> 
+     <link rel="stylesheet" href="style.css">
+     <style>
+    /* ==========================================
+       📌 CONTENT SPECIFIC STYLING (INTERNAL)
+       ========================================== */
+   
+.packages-page-hero {
+    padding: 160px 24px 80px 24px;
+    /* 🌟 Yeh do lines text ke peeche dark filter aur khoobsurat photo laga dengi */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hunza valley/Attabad Lake.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    width: 100%;
+    color: var(--white); 
+}
+
+    .packages-page-hero h1 {
+        color: #ffffff !important;
+        font-size: 2.8rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+    }
+
+    .packages-page-hero h1 span {
+        color: var(--gold) !important;
+    }
+
+    .packages-page-hero p {
+        color: #e5e5e5;
+        font-size: 1.05rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .packages-full-section {
+        padding: 60px 24px 80px 24px;
+        background-color: var(--white);
+        width: 100%;
+        min-height: 80vh;
+    }
+
+    .packages-full-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 30px;
+    }
+
+    .full-package-card {
+        background-color: var(--light-gray);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .full-package-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .full-package-img-box {
+        position: relative;
+        height: 230px;
+        width: 100%;
+    }
+
+    .full-package-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .full-package-tag {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background-color: var(--gold);
+        color: var(--black);
+        padding: 5px 12px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        border-radius: 4px;
+        text-transform: uppercase;
+    }
+
+    .full-package-content {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .full-package-title {
+        font-size: 1.3rem;
+        color: var(--black);
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .full-package-days {
+        color: #888888;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+    .full-package-desc {
+        color: #555555;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 25px;
+        flex-grow: 1;
+    }
+
+    .full-package-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+        padding-top: 15px;
+    }
+
+    .full-package-price {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: var(--black);
+    }
+
+    .full-book-btn {
+        background-color: var(--black);
+        color: var(--white);
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .full-book-btn:hover {
+        background-color: var(--gold);
+        color: var(--black);
+    }
+
+    /* ⚡ RESPONSIVE MEDIA QUERIES FOR GRID */
+    @media screen and (max-width: 1024px) {
+        .packages-full-grid {
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px;
+        }
+        .packages-page-hero h1 { font-size: 2.2rem; }
+    }
+
+    @media screen and (max-width: 650px) {
+        .packages-full-grid {
+            grid-template-columns: 1fr; 
+        }
+        .packages-full-section { padding: 40px 20px; }
+    }
+</style>
+
+</head>
+<body>
+  <!-- ==========================================
+     SOLID WHITE NAVIGATION BAR (FOR INNER PAGES)
+     ========================================== -->
+<header class="inner-main-navbar">
+    <div class="inner-nav-container">
+        <!-- Logo Link -->
+        <a href="index.html" class="inner-nav-logo">
+            <img src="logo.png" alt="Travel With Saad Logo" class="inner-logo-img">
+        </a>
+        
+        <!-- Navigation Menu Links -->
+        <nav class="inner-nav-menu" id="innerNavMenu">
+            <a href="index.html" class="inner-nav-link">Home</a>
+            <a href="about.html" class="inner-nav-link">About Us</a>
+            <a href="packages.html" class="inner-nav-link">Tour Packages</a>
+            <a href="gallery.html" class="inner-nav-link">Gallery</a>
+            <a href="blog.html" class="inner-nav-link">Blog</a>
+            <a href="contact.html" class="inner-nav-link">Contact Us</a>
+        </nav>
+
+        <!-- Right Side Start Exploring Button -->
+        <a href="contact.html" class="inner-nav-cta">Start Exploring</a>
+        
+        <!-- Hamburger Button (Tablet + Mobile) -->
+        <button class="inner-hamburger-btn" id="innerMenuBtn" aria-label="Toggle Navigation">
+            <span class="inner-bar"></span>
+            <span class="inner-bar"></span>
+            <span class="inner-bar"></span>
+        </button>
+    </div>
+</header>
+<!-- ==========================================
+     PACKAGES PAGE HERO BANNER
+     ========================================== -->
+<section class="packages-page-hero">
+    <h1>Explore Our Premium <span>Tour Packages</span></h1>
+    <p>Choose from our meticulously crafted luxury itineraries across Pakistan’s most breathtaking and iconic landscapes.</p>
+</section>
+
+<!-- ==========================================
+     FULL TOURS GRID LAYOUT SECTION
+     ========================================== -->
+<section class="packages-full-section">
+    <div class="packages-full-grid">
+        
+        <!-- Card 1: Hunza Valley -->
+        <div class="full-package-card">
+            <div class="full-package-img-box">
+                <img src="hunza.jpg" alt="Hunza Valley" class="full-package-img">
+                <span class="full-package-tag">Best Seller</span>
+            </div>
+            <div class="full-package-content">
+                <h3 class="full-package-title">Beautiful Hunza Valley Tour</h3>
+                <p class="full-package-days">⏳ 5 Days / 4 Nights</p>
+                <p class="full-package-desc">Explore Attabad Lake, Karimabad Bazar, Baltit Fort, and the magnificent Passu Cones.</p>
+                <div class="full-package-footer">
+                    <span class="full-package-price">Rs. 45,000</span>
+                    <a href="contact.html" class="full-book-btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Skardu Adventure -->
+        <div class="full-package-card">
+            <div class="full-package-img-box">
+                <img src="skardu.jpg" alt="Skardu Tour" class="full-package-img">
+                <span class="full-package-tag">Top Rated</span>
+            </div>
+            <div class="full-package-content">
+                <h3 class="full-package-title">Skardu & Deosai Plains</h3>
+                <p class="full-package-days">⏳ 7 Days / 6 Nights</p>
+                <p class="full-package-desc">Witness Shangrila Resort, Upper Kachura Lake, Cold Desert, and the massive plains of Deosai.</p>
+                <div class="full-package-footer">
+                    <span class="full-package-price">Rs. 55,000</span>
+                    <a href="contact.html" class="full-book-btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Swat Valley -->
+        <div class="full-package-card">
+            <div class="full-package-img-box">
+                <img src="swat.jpg" alt="Swat Valley" class="full-package-img">
+                <span class="full-package-tag">Trending</span>
+            </div>
+            <div class="full-package-content">
+                <h3 class="full-package-title">Swat Valley & Malam Jabba</h3>
+                <p class="full-package-days">⏳ 4 Days / 3 Nights</p>
+                <p class="full-package-desc">Enjoy amazing chairlift rides at Malam Jabba ski resort, Kalam Valley, and Mahodand Lake.</p>
+                <div class="full-package-footer">
+                    <span class="full-package-price">Rs. 35,000</span>
+                    <a href="contact.html" class="full-book-btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4: Naran Kaghan -->
+        <div class="full-package-card">
+            <div class="full-package-img-box">
+                <img src="naran kaghan.jpg" alt="Naran Kaghan" class="full-package-img">
+                <span class="full-package-tag">Family Choice</span>
+            </div>
+            <div class="full-package-content">
+                <h3 class="full-package-title">Naran & Saif-ul-Malook</h3>
+                <p class="full-package-days">⏳ 5 Days / 4 Nights</p>
+                <p class="full-package-desc">Visit Balakot, Shogran, Siri Paye Meadows, and the magical, legendary Saif-ul-Malook Lake.</p>
+                <div class="full-package-footer">
+                    <span class="full-package-price">Rs. 38,000</span>
+                    <a href="contact.html" class="full-book-btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5: Neelum Valley -->
+        <div class="full-package-card">
+            <div class="full-package-img-box">
+                <img src="kashmir rawlakot.jpg" alt="Kashmir Tour" class="full-package-img">
+                <span class="full-package-tag">Nature Lovers</span>
+            </div>
+            <div class="full-package-content">
+                <h3 class="full-package-title">Azad Kashmir Neelum Valley</h3>
+                <p class="full-package-days">⏳ 6 Days / 5 Nights</p>
+                <p class="full-package-desc">Explore Muzaffarabad, Dhani Waterfall, Kutton, Keran, Sharda Peeth, and Ratti Gali Lake.</p>
+                <div class="full-package-footer">
+                    <span class="full-package-price">Rs. 42,000</span>
+                    <a href="contact.html" class="full-book-btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6: Murree Patriata -->
+        <div class="full-package-card">
+            <div class="full-package-img-box">
+                <img src="murree.jpg" alt="Murree Patriata" class="full-package-img">
+                <span class="full-package-tag">Weekend Escapes</span>
+            </div>
+            <div class="full-package-content">
+                <h3 class="full-package-title">Murree Hills & Patriata Tour</h3>
+                <p class="full-package-days">⏳ 3 Days / 2 Nights</p>
+                <p class="full-package-desc">Relax at Mall Road, Bhurban luxury resorts, Ayubia National Park, and Patriata chairlift.</p>
+                <div class="full-package-footer">
+                    <span class="full-package-price">Rs. 25,000</span>
+                    <a href="contact.html" class="full-book-btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ==========================================
+     MAIN WEBSITE FOOTER SECTION
+     ========================================== -->
+<footer class="main-footer">
+    <div class="footer-container">
+        
+        <!-- Column 1: Brand & Logo Info -->
+        <div class="footer-col brand-info">
+            <h3 class="footer-logo">Travel With <span>Saad</span></h3>
+            <p class="footer-desc">Your premium travel partner in Pakistan. We curate unforgettable premium luxury tours across the most beautiful landscapes.</p>
+            
+          
+<!-- Is code se icons aur text dono saaf likhe hue nazar aaein ge -->
+<div class="footer-social-links" style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+    
+    <!-- 1. Facebook Link -->
+    <a href="https://www.facebook.com/iamrajasaad" target="_blank" aria-label="Facebook" style="color: #ffffff; font-size: 0.95rem; text-decoration: none; font-family: sans-serif; display: flex; align-items: center; gap: 10px;">
+        <i class="fab fa-facebook-f" style="color: #f5b316; width: 16px;"></i> Facebook
+    </a>
+    
+    <!-- 2. Instagram Link -->
+    <a href="https://instagram.com" target="_blank" aria-label="Instagram" style="color: #ffffff; font-size: 0.95rem; text-decoration: none; font-family: sans-serif; display: flex; align-items: center; gap: 10px;">
+        <i class="fab fa-instagram" style="color: #f5b316; width: 16px;"></i> Instagram
+    </a>
+    
+    <!-- 3. LinkedIn Link -->
+    <a href="https://www.linkedin.com/company/travel-with-saad/" target="_blank" aria-label="LinkedIn" style="color: #ffffff; font-size: 0.95rem; text-decoration: none; font-family: sans-serif; display: flex; align-items: center; gap: 10px;">
+        <i class="fab fa-linkedin-in" style="color: #f5b316; width: 16px;"></i> LinkedIn
+    </a>
+
+</div>
+
+
+        </div>
+
+        <!-- Column 2: Quick Links Navigation -->
+        <div class="footer-col links-info">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="packages.html">Tour Packages</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Real Direct Contact details -->
+        <div class="footer-col contact-info">
+            <h4 class="footer-heading">Contact Details</h4>
+            <ul class="footer-contact-list">
+                <li><span>📍</span> Office 42, Blue Area, Islamabad, Pakistan</li>
+                <li><span>📞</span> +92 318 5631266</li> <!-- Mentor ka asli contact number responsibly bina list kharab kiye update kar diya -->
+                <li><span>✉️</span> info@travelwithsaad.com</li>
+                <li><span>⏰</span> Mon - Sat: 9:00 AM - 6:00 PM</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom Copyright Strip -->
+    <div class="footer-bottom-strip">
+        <p>&copy; 2026 Travel With Saad. All Rights Reserved. Designed for Internship Project.</p>
+    </div>
+</footer>
+
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
