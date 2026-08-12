@@ -108,13 +108,13 @@ const albumsPool = {
         title: "Skardu & Deosai",
         images: [
 
-            "skardu/skardu 6.jfif",
-            "skardu/skardu 2.jpg",
-            "skardu/skardu 3.jfif",
-            "skardu/skardu 5.jfif",
-            "skardu/skardu 1.jpg",
-            "skardu/skardu 4.jfif",
-            "skardu/Upper Kachura Lake.jfif"
+            "./skardu/skardu 6.jfif",
+            "./skardu/skardu 2.jpg",
+            "./skardu/skardu 3.jfif",
+            "./skardu/skardu 5.jfif",
+            "./skardu/skardu 1.jpg",
+            "./skardu/skardu 4.jfif",
+            "./skardu/Upper Kachura Lake.jfif"
 
         ]
     },
