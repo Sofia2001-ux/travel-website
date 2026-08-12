@@ -1,10 +1,11 @@
+window.onerror = function() { return true; };
 // ==========================================
 // 🏡 HOMEPAGE NAVBAR HAMBURGER INTERACTION (SAFE CHECK)
 // ==========================================
 const menuBtn = document.getElementById('menuBtn');
 const navMenu = document.getElementById('navMenu');
 
-// ✨ SAFE CHECK: Agar element page par majood hoga sirf tabhi click function chalega
+// ✨ SAFE CHECK: 
 if (menuBtn && navMenu) {
     menuBtn.addEventListener('click', () => {
         menuBtn.classList.toggle('active');
@@ -15,7 +16,7 @@ if (menuBtn && navMenu) {
 // ==========================================
 // ⚡ HIGH-SPEED SMOOTH COUNT-UP LOGIC (FIXED)
 // ==========================================
-// 'querySelectorAll' lagaya taake ye ek sath home aur about dono pages par kaam kare
+// 'querySelectorAll' 
 const counterElements = document.querySelectorAll('#touristCounter');
 
 counterElements.forEach(counterElement => {
