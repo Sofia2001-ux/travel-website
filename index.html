@@ -7,6 +7,228 @@
      
      <link rel="stylesheet" href="css/all.min.css"> 
      <link rel="stylesheet" href="style.css">
+     <style>
+/* ================================================
+   NEW SECTIONS CSS (WHY CHOOSE US, FEATURED DESTINATIONS, TESTIMONIALS, FAQS, NEWSLETTER)
+   ================================================ */
+ 
+/* ---------- WHY CHOOSE US ---------- */
+.why-choose-section {
+    padding: 80px 20px;
+    background-color: #fafafa;
+    text-align: center;
+}
+.why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+}
+.why-choose-card {
+    background: #fff;
+    padding: 35px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
+}
+.why-choose-card:hover {
+    transform: translateY(-8px);
+}
+.why-choose-icon {
+    font-size: 2.2rem;
+    color: #f5b316;
+    margin-bottom: 15px;
+}
+.why-choose-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+.why-choose-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+ 
+
+ 
+/* ---------- TESTIMONIALS ---------- */
+.testimonials-section {
+    padding: 80px 20px;
+    background-color: #fafafa;
+    text-align: center;
+}
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+}
+.testimonial-card {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    text-align: left;
+}
+.testimonial-stars {
+    color: #f5b316;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+.testimonial-text {
+    font-size: 0.92rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+.testimonial-person {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.testimonial-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #f5b316;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+.testimonial-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+.testimonial-role {
+    font-size: 0.8rem;
+    color: #888;
+}
+ 
+/* ---------- FAQS ---------- */
+.faqs-section {
+    padding: 80px 20px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+.faqs-section .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.faq-item {
+    border-bottom: 1px solid #e5e5e5;
+}
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 20px 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-question .faq-icon {
+    color: #f5b316;
+    transition: transform 0.3s ease;
+}
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+.faq-answer p {
+    padding: 0 5px 20px;
+    font-size: 0.92rem;
+    color: #666;
+    line-height: 1.6;
+}
+.faq-item.active .faq-answer {
+    max-height: 300px;
+}
+ 
+/* ---------- NEWSLETTER ---------- */
+.newsletter-section {
+    padding: 60px 20px;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+.newsletter-section h2 {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+.newsletter-section p {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 450px;
+    margin: 0 auto;
+}
+.newsletter-form input {
+    flex: 1;
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: none;
+    font-size: 0.9rem;
+}
+.newsletter-form button {
+    padding: 14px 24px;
+    background: #f5b316;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+ 
+/* ================================================
+   RESPONSIVE — TABLET (max-width: 992px)
+   ================================================ */
+@media (max-width: 992px) {
+    .why-choose-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+ 
+/* ================================================
+   RESPONSIVE — MOBILE (max-width: 576px)
+   ================================================ */
+@media (max-width: 576px) {
+    .why-choose-grid,
+    .destinations-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    .newsletter-form {
+        flex-direction: column;
+    }
+    .why-choose-section,
+    .testimonials-section,
+    .faqs-section,
+    .newsletter-section {
+        padding: 50px 15px;
+    }
+}
+</style>
 </head>
 <body>
     <!-- ==========================================
@@ -89,6 +311,37 @@
         </div>
     </div>
 </section>
+<!-- ================================================
+     WHY CHOOSE US SECTION
+     ================================================ -->
+<section class="why-choose-section">
+    <div class="section-header">
+        <p class="sub-title">Our Advantages</p>
+        <h2 class="main-title">Why Choose <span>Us</span></h2>
+    </div>
+    <div class="why-choose-grid">
+        <div class="why-choose-card">
+            <i class="fas fa-tags why-choose-icon"></i>
+            <h3>Best Prices</h3>
+            <p>Affordable packages without compromising on quality or comfort.</p>
+        </div>
+        <div class="why-choose-card">
+            <i class="fas fa-headset why-choose-icon"></i>
+            <h3>24/7 Support</h3>
+            <p>Our team is always available to assist you before and during your trip.</p>
+        </div>
+        <div class="why-choose-card">
+            <i class="fas fa-user-shield why-choose-icon"></i>
+            <h3>Verified Guides</h3>
+            <p>Experienced and trusted local guides for a safe travel experience.</p>
+        </div>
+        <div class="why-choose-card">
+            <i class="fas fa-map-marked-alt why-choose-icon"></i>
+            <h3>Custom Packages</h3>
+            <p>Tours tailored to your budget, dates, and travel preferences.</p>
+        </div>
+    </div>
+</section>
 <!-- ==========================================
      POPULAR TOUR PACKAGES SECTION
      ========================================== -->
@@ -161,6 +414,98 @@
         </div>
     </div>
 </section>
+
+    
+<!-- ================================================
+     TESTIMONIALS SECTION
+     ================================================ -->
+<section class="testimonials-section">
+    <div class="section-header">
+        <p class="sub-title">Client Feedback</p>
+        <h2 class="main-title">What Our <span>Travelers Say</span></h2>
+    </div>
+    <div class="testimonials-grid">
+        <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">Amazing experience with Hunza tour. Everything was well organized and the guide was very professional.</p>
+            <div class="testimonial-person">
+                <div class="testimonial-avatar">A</div>
+                <div>
+                    <p class="testimonial-name">Ahmed Raza</p>
+                    <p class="testimonial-role">Hunza Valley Tour</p>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">Best travel agency in Pakistan. Skardu trip was beyond our expectations, highly recommended.</p>
+            <div class="testimonial-person">
+                <div class="testimonial-avatar">S</div>
+                <div>
+                    <p class="testimonial-name">Sana Khan</p>
+                    <p class="testimonial-role">Skardu & Deosai Tour</p>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">Great value for money. The Swat trip was smooth from booking to drop off. Will book again soon.</p>
+            <div class="testimonial-person">
+                <div class="testimonial-avatar">B</div>
+                <div>
+                    <p class="testimonial-name">Bilal Hussain</p>
+                    <p class="testimonial-role">Swat Valley Tour</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<!-- ================================================
+     FAQS SECTION
+     ================================================ -->
+<section class="faqs-section">
+    <div class="section-header">
+        <p class="sub-title">Got Questions?</p>
+        <h2 class="main-title">Frequently Asked <span>Questions</span></h2>
+    </div>
+ 
+    <div class="faq-item">
+        <button class="faq-question">How do I book a tour package?
+            <i class="fas fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+            <p>You can book directly through our Contact page form, or call us on the number listed in the footer.</p>
+        </div>
+    </div>
+ 
+    <div class="faq-item">
+        <button class="faq-question">What is included in the package price?
+            <i class="fas fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+            <p>Packages generally include transport, accommodation, and guided tours. Exact inclusions are listed on each package page.</p>
+        </div>
+    </div>
+ 
+    <div class="faq-item">
+        <button class="faq-question">Can I cancel or reschedule my booking?
+            <i class="fas fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+            <p>Yes, cancellations and rescheduling are allowed up to 48 hours before departure. Contact our support team for assistance.</p>
+        </div>
+    </div>
+ 
+    <div class="faq-item">
+        <button class="faq-question">Do you offer custom tour packages?
+            <i class="fas fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+            <p>Yes, we design custom packages based on your budget, travel dates, and destination preferences.</p>
+        </div>
+    </div>
+</section>
 <!-- ==========================================
      QUICK INQUIRY FORM (FORMSPREE INTEGRATION)
      ========================================== -->
@@ -197,6 +542,18 @@
 
     </div>
 </section>
+<!-- ================================================
+     NEWSLETTER SIGNUP SECTION
+     ================================================ -->
+<section class="newsletter-section">
+    <h2>Subscribe To Our Newsletter</h2>
+    <p>Get exclusive travel deals and updates directly in your inbox.</p>
+    <form class="newsletter-form" action="https://formspree.io/f/mljrjzow" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+</section>
+ 
 <!-- ==========================================
      MAIN WEBSITE FOOTER SECTION
      ========================================== -->

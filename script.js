@@ -379,3 +379,42 @@ document.addEventListener("click", function (event) {
     }
 
 });
+
+/* ================================================
+   PACKAGE CATEGORY FILTER SCRIPT
+   ================================================ */
+document.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(function(b) {
+            b.classList.remove('active');
+        });
+        btn.classList.add('active');
+
+        var selected = btn.getAttribute('data-filter');
+
+        document.querySelectorAll('.full-package-card').forEach(function(card) {
+            var cardCategories = card.getAttribute('data-category');
+            if (selected === 'all' || cardCategories.indexOf(selected) !== -1) {
+                card.classList.remove('hide-card');
+            } else {
+                card.classList.add('hide-card');
+            }
+        });
+    });
+});
+/* ================================================
+   CONTACT FAQ ACCORDION TOGGLE
+   ================================================ */
+document.querySelectorAll('.contact-faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        btn.parentElement.classList.toggle('active');
+    });
+});
+// ================================================
+// FAQ ACCORDION TOGGLE
+// ================================================
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        btn.parentElement.classList.toggle('active');
+    });
+});

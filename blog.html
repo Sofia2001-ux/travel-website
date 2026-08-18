@@ -12,7 +12,7 @@
        ========================================== */
     .blog-page-hero {
         padding: 160px 24px 60px 24px;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://unsplash.com');
+         background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hunza valley/Attabad Lake.jpg');
         background-size: cover;
         background-position: center;
         text-align: center;
@@ -143,6 +143,177 @@
         .blog-full-grid { grid-template-columns: 1fr; } /* Vertical single strip card cascade on mobiles */
         .blog-full-section { padding: 40px 15px; }
     }
+
+    /* ================================================
+       FEATURED POST SECTION CSS
+       ================================================ */
+    .featured-post-section {
+        padding: 60px 24px 0 24px;
+        background-color: var(--white);
+    }
+    .featured-post-card {
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: var(--light-gray);
+        border-radius: 12px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
+    .featured-post-img {
+        width: 100%;
+        height: 100%;
+        min-height: 320px;
+        object-fit: cover;
+    }
+    .featured-post-content {
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .featured-post-badge {
+        display: inline-block;
+        background-color: var(--gold);
+        color: var(--black);
+        padding: 5px 14px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        width: fit-content;
+    }
+    .featured-post-content h2 {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: var(--black);
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+    .featured-post-content p {
+        color: #555555;
+        font-size: 0.92rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    /* ================================================
+       NEWSLETTER SECTION CSS
+       ================================================ */
+    .blog-newsletter-section {
+        padding: 60px 24px;
+        background-color: #1a1a1a;
+        text-align: center;
+    }
+    .blog-newsletter-section h2 {
+        color: #fff;
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+    .blog-newsletter-section p {
+        color: #ccc;
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+    }
+    .blog-newsletter-form {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    .blog-newsletter-form input {
+        flex: 1;
+        padding: 14px 18px;
+        border-radius: 8px;
+        border: none;
+        font-size: 0.9rem;
+    }
+    .blog-newsletter-form button {
+        padding: 14px 24px;
+        background: var(--gold);
+        color: var(--black);
+        border: none;
+        border-radius: 8px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    /* ================================================
+       RELATED / RECENT POSTS SECTION CSS
+       ================================================ */
+    .related-posts-section {
+        padding: 60px 24px 80px 24px;
+        background-color: var(--white);
+        text-align: center;
+    }
+    .related-posts-section .section-title {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: var(--black);
+        margin-bottom: 35px;
+    }
+    .related-posts-section .section-title span {
+        color: var(--gold);
+    }
+    .related-posts-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    .related-post-card {
+        text-align: left;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: var(--light-gray);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    }
+    .related-post-card img {
+        width: 100%;
+        height: 130px;
+        object-fit: cover;
+    }
+    .related-post-card .related-post-body {
+        padding: 15px;
+    }
+    .related-post-card h4 {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--black);
+        line-height: 1.4;
+    }
+
+    /* ⚡ NEW SECTIONS RESPONSIVE — TABLET */
+    @media screen and (max-width: 1024px) {
+        .featured-post-card {
+            grid-template-columns: 1fr;
+        }
+        .related-posts-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* ⚡ NEW SECTIONS RESPONSIVE — MOBILE */
+    @media screen and (max-width: 650px) {
+        .related-posts-grid {
+            grid-template-columns: 1fr;
+        }
+        .blog-newsletter-form {
+            flex-direction: column;
+        }
+        .featured-post-content {
+            padding: 25px;
+        }
+        .featured-post-section,
+        .blog-newsletter-section,
+        .related-posts-section {
+            padding: 45px 18px;
+        }
+    }
 </style>
 
 </head>
@@ -184,6 +355,21 @@
 <section class="blog-page-hero">
     <h1>Our Travel <span>Stories & Blogs</span></h1>
     <p>Read our latest travel guides, tips, and personal diaries captured across the beautiful landscapes of Pakistan.</p>
+</section>
+
+<!-- ================================================
+     FEATURED POST SECTION
+     ================================================ -->
+<section class="featured-post-section">
+    <div class="featured-post-card">
+        <img src="hunza valley/Attabad Lake.jpg" alt="Featured Post" class="featured-post-img">
+        <div class="featured-post-content">
+            <span class="featured-post-badge">Featured</span>
+            <h2>The Ultimate Guide To Planning Your First Northern Pakistan Trip</h2>
+            <p>Everything you need to know before you go — best time to visit, must-pack items, road conditions, and how to choose the right tour package for your travel style.</p>
+            <a href="#" class="blog-read-btn">Read Full Story ➔</a>
+        </div>
+    </div>
 </section>
 
 <!-- ==========================================
@@ -235,6 +421,51 @@
         </article>
 
     </div>
+</section>
+
+<!-- ================================================
+     RELATED / RECENT POSTS SECTION
+     ================================================ -->
+<section class="related-posts-section">
+    <h2 class="section-title">Recent <span>Stories</span></h2>
+    <div class="related-posts-grid">
+        <div class="related-post-card">
+            <img src="naran/naran 3.jpg" alt="Naran Kaghan">
+            <div class="related-post-body">
+                <h4>A Weekend Escape To Naran & Saif-ul-Malook</h4>
+            </div>
+        </div>
+        <div class="related-post-card">
+            <img src="murree/murree 1.jfif" alt="Murree Hills">
+            <div class="related-post-body">
+                <h4>5 Reasons Murree Is Perfect For A Quick Trip</h4>
+            </div>
+        </div>
+        <div class="related-post-card">
+            <img src="swat/swat 3.jfif" alt="Swat Valley">
+            <div class="related-post-body">
+                <h4>Skiing In Malam Jabba: What To Expect</h4>
+            </div>
+        </div>
+        <div class="related-post-card">
+            <img src="skardu/skardu 6.jfif" alt="Skardu">
+            <div class="related-post-body">
+                <h4>Best Photography Spots In Skardu</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================================================
+     NEWSLETTER SECTION
+     ================================================ -->
+<section class="blog-newsletter-section">
+    <h2>Never Miss A Story</h2>
+    <p>Subscribe to get our latest travel guides and tips delivered to your inbox.</p>
+    <form class="blog-newsletter-form" action="https://formspree.io/f/mljrjzow" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+    </form>
 </section>
 
 <!-- ==========================================

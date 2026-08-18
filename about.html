@@ -106,6 +106,297 @@
                 gap: 15px;
             }
         }
+       /* ================================================
+           TEAM MEMBERS SECTION CSS
+           ================================================ */
+        .team-section {
+            padding: 80px 24px;
+            text-align: center;
+        }
+        .team-header {
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+        .team-subtitle {
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .team-title {
+            color: var(--black);
+            font-size: 2rem;
+            font-weight: 800;
+        }
+        .team-title span {
+            color: var(--gold);
+        }
+        .team-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .team-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-6px);
+        }
+        .team-photo {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        .team-photo-placeholder {
+            width: 100%;
+            height: 160px;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--gold);
+        }
+        .team-info {
+            padding: 15px;
+        }
+        .team-name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 3px;
+        }
+        .team-role {
+            color: var(--gold);
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+ 
+        /* ⚡ TEAM RESPONSIVE — TABLET */
+        @media screen and (max-width: 1024px) {
+            .team-section {
+                padding: 60px 20px;
+            }
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .team-title {
+                font-size: 1.7rem;
+            }
+        }
+ 
+        /* ⚡ TEAM RESPONSIVE — MOBILE */
+        @media screen and (max-width: 576px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+/* ================================================
+           TEAM MEMBERS SECTION CSS
+           ================================================ */
+        .team-section {
+            padding: 80px 24px;
+            text-align: center;
+        }
+        .team-header {
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+        .team-subtitle {
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .team-title {
+            color: var(--black);
+            font-size: 2rem;
+            font-weight: 800;
+        }
+        .team-title span {
+            color: var(--gold);
+        }
+        .team-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .team-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-6px);
+        }
+        .team-photo {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        .team-photo-placeholder {
+            width: 100%;
+            height: 160px;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--gold);
+        }
+        .team-info {
+            padding: 15px;
+        }
+        .team-name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 3px;
+        }
+        .team-role {
+            color: var(--gold);
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+ 
+        /* ⚡ TEAM RESPONSIVE — TABLET */
+        @media screen and (max-width: 1024px) {
+            .team-section {
+                padding: 60px 20px;
+            }
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .team-title {
+                font-size: 1.7rem;
+            }
+        }
+ 
+        /* ⚡ TEAM RESPONSIVE — MOBILE */
+        @media screen and (max-width: 576px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+ 
+        /* ================================================
+           WHY TRAVEL WITH US SECTION CSS
+           ================================================ */
+        .why-travel-section {
+            padding: 80px 24px;
+            background-color: var(--light-gray);
+            text-align: center;
+        }
+        .why-travel-header {
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+        .why-travel-subtitle {
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .why-travel-title {
+            color: var(--black);
+            font-size: 2rem;
+            font-weight: 800;
+        }
+        .why-travel-title span {
+            color: var(--gold);
+        }
+        .why-travel-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        .why-travel-box {
+            background-color: var(--white);
+            padding: 35px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+        .why-travel-icon {
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+        .why-travel-box h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 8px;
+        }
+        .why-travel-box p {
+            color: #666666;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+ 
+        /* ================================================
+           CTA BANNER SECTION CSS
+           ================================================ */
+        .about-cta-section {
+            padding: 60px 24px;
+            background-color: var(--gold);
+            text-align: center;
+        }
+        .about-cta-section h2 {
+            color: var(--black);
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .about-cta-btn {
+            display: inline-block;
+            background-color: var(--black);
+            color: #ffffff;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+ 
+        /* ⚡ NEW SECTIONS RESPONSIVE — TABLET */
+        @media screen and (max-width: 1024px) {
+            .why-travel-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .why-travel-title {
+                font-size: 1.7rem;
+            }
+        }
+ 
+        /* ⚡ NEW SECTIONS RESPONSIVE — MOBILE */
+        @media screen and (max-width: 576px) {
+            .why-travel-grid {
+                grid-template-columns: 1fr;
+            }
+            .why-travel-section,
+            .about-cta-section {
+                padding: 50px 18px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -180,7 +471,81 @@
 
     </div>
 </section>
-
+<!-- ================================================
+     TEAM MEMBERS SECTION
+     ================================================ -->
+<section class="team-section">
+    <div class="team-header">
+        <p class="team-subtitle">Meet Our Team</p>
+        <h2 class="team-title">The People <span>Behind It</span></h2>
+    </div>
+    <div class="team-grid">
+        <div class="team-card">
+            <img src="hunza.jpg" alt="Name 1" class="team-photo">
+            <div class="team-info">
+                <p class="team-name">Name 1</p>
+                <p class="team-role">Designation 1</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="skardu.jpg" alt="Name 2" class="team-photo">
+            <div class="team-info">
+                <p class="team-name">Name 2</p>
+                <p class="team-role">Designation 2</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="swat.jpg" alt="Name 3" class="team-photo">
+            <div class="team-info">
+                <p class="team-name">Name 3</p>
+                <p class="team-role">Designation 3</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="hunza.jpg" alt="Name 4" class="team-photo">
+            <div class="team-info">
+                <p class="team-name">Name 4</p>
+                <p class="team-role">Designation 4</p>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<!-- ================================================
+     WHY TRAVEL WITH US SECTION
+     ================================================ -->
+<section class="why-travel-section">
+    <div class="why-travel-header">
+        <p class="why-travel-subtitle">Our Promise</p>
+        <h2 class="why-travel-title">Why Travel <span>With Us</span></h2>
+    </div>
+    <div class="why-travel-grid">
+        <div class="why-travel-box">
+            <i class="fas fa-hand-holding-heart why-travel-icon"></i>
+            <h3>Trusted Since Day One</h3>
+            <p>Built on honesty and word-of-mouth trust from our early travelers.</p>
+        </div>
+        <div class="why-travel-box">
+            <i class="fas fa-route why-travel-icon"></i>
+            <h3>Local Expertise</h3>
+            <p>Our guides know the hidden spots that most tours never show you.</p>
+        </div>
+        <div class="why-travel-box">
+            <i class="fas fa-hand-holding-usd why-travel-icon"></i>
+            <h3>No Hidden Charges</h3>
+            <p>What you see in the package price is exactly what you pay.</p>
+        </div>
+    </div>
+</section>
+ 
+<!-- ================================================
+     CTA BANNER SECTION
+     ================================================ -->
+<section class="about-cta-section">
+    <h2>Ready To Start Your Journey With Us?</h2>
+    <a href="contact.html" class="about-cta-btn">Contact Us Now</a>
+</section>
+ 
 <!-- ==========================================
      MAIN WEBSITE FOOTER SECTION
      ========================================== -->

@@ -129,6 +129,145 @@
         .form-field-row { flex-direction: column; gap: 15px; }
         .contact-form-box { padding: 25px 20px; }
     }
+
+    /* ================================================
+       GOOGLE MAP SECTION CSS
+       ================================================ */
+    .contact-map-section {
+        width: 100%;
+        padding: 0 24px 60px 24px;
+        background-color: var(--white);
+    }
+    .contact-map-wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+    .contact-map-wrap iframe {
+        width: 100%;
+        height: 400px;
+        border: 0;
+        display: block;
+    }
+
+    /* ================================================
+       SOCIAL CONNECT SECTION CSS
+       ================================================ */
+    .contact-social-section {
+        padding: 60px 24px;
+        background-color: var(--light-gray);
+        text-align: center;
+    }
+    .contact-social-section h2 {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: var(--black);
+        margin-bottom: 10px;
+    }
+    .contact-social-section h2 span { color: var(--gold); }
+    .contact-social-section p {
+        color: #666666;
+        font-size: 0.92rem;
+        margin-bottom: 25px;
+    }
+    .contact-social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+    }
+    .contact-social-icons a {
+        width: 50px;
+        height: 50px;
+        background-color: var(--black);
+        color: var(--gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    .contact-social-icons a:hover {
+        background-color: var(--gold);
+        color: var(--black);
+    }
+
+    /* ================================================
+       CONTACT FAQS SECTION CSS
+       ================================================ */
+    .contact-faqs-section {
+        padding: 80px 24px;
+        max-width: 850px;
+        margin: 0 auto;
+    }
+    .contact-faqs-section .section-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .contact-faqs-section .section-header h2 {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: var(--black);
+    }
+    .contact-faqs-section .section-header h2 span { color: var(--gold); }
+    .contact-faq-item {
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .contact-faq-question {
+        width: 100%;
+        background: none;
+        border: none;
+        text-align: left;
+        padding: 20px 5px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .contact-faq-question .contact-faq-icon {
+        color: var(--gold);
+        transition: transform 0.3s ease;
+    }
+    .contact-faq-item.active .contact-faq-icon {
+        transform: rotate(45deg);
+    }
+    .contact-faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    .contact-faq-answer p {
+        padding: 0 5px 20px;
+        font-size: 0.92rem;
+        color: #666;
+        line-height: 1.6;
+    }
+    .contact-faq-item.active .contact-faq-answer {
+        max-height: 300px;
+    }
+
+    /* ⚡ NEW SECTIONS RESPONSIVE — MOBILE */
+    @media screen and (max-width: 600px) {
+        .contact-map-wrap iframe {
+            height: 280px;
+        }
+        .contact-social-icons a {
+            width: 44px;
+            height: 44px;
+            font-size: 1rem;
+        }
+        .contact-map-section,
+        .contact-social-section,
+        .contact-faqs-section {
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+    }
 </style>
 
 </head>
@@ -220,6 +359,69 @@
     </div>
 </section>
 
+<!-- ================================================
+     GOOGLE MAP SECTION
+     ================================================ -->
+<section class="contact-map-section">
+    <div class="contact-map-wrap">
+        <iframe
+            src="https://www.google.com/maps?q=Blue%20Area%2C%20Islamabad%2C%20Pakistan&output=embed"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
+
+<!-- ================================================
+     SOCIAL CONNECT SECTION
+     ================================================ -->
+<section class="contact-social-section">
+    <h2>Follow Us On <span>Social Media</span></h2>
+    <p>Stay updated with our latest tours, offers, and travel stories.</p>
+    <div class="contact-social-icons">
+        <a href="https://www.facebook.com/iamrajasaad" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/travel-with-saad/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</section>
+
+<!-- ================================================
+     CONTACT FAQS SECTION
+     ================================================ -->
+<section class="contact-faqs-section">
+    <div class="section-header">
+        <h2>Contact <span>FAQs</span></h2>
+    </div>
+
+    <div class="contact-faq-item">
+        <button class="contact-faq-question">How quickly will I get a reply?
+            <i class="fas fa-plus contact-faq-icon"></i>
+        </button>
+        <div class="contact-faq-answer">
+            <p>We usually respond to inquiries within 24 hours on working days.</p>
+        </div>
+    </div>
+
+    <div class="contact-faq-item">
+        <button class="contact-faq-question">Can I contact you on WhatsApp?
+            <i class="fas fa-plus contact-faq-icon"></i>
+        </button>
+        <div class="contact-faq-answer">
+            <p>Yes, you can message us directly on the WhatsApp number listed above.</p>
+        </div>
+    </div>
+
+    <div class="contact-faq-item">
+        <button class="contact-faq-question">Do you offer support outside working hours?
+            <i class="fas fa-plus contact-faq-icon"></i>
+        </button>
+        <div class="contact-faq-answer">
+            <p>Our office hours are Mon - Sat, 9:00 AM - 6:00 PM. Urgent messages sent outside these hours will be answered the next working day.</p>
+        </div>
+    </div>
+</section>
+
 <!-- ==========================================
      MAIN WEBSITE FOOTER SECTION
      ========================================== -->
@@ -291,6 +493,7 @@
 
 
 <script src="script.js"></script>
+
 
 </body>
 </html>

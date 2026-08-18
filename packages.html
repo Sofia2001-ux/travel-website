@@ -13,7 +13,6 @@
    
 .packages-page-hero {
     padding: 160px 24px 80px 24px;
-    /* 🌟 Yeh do lines text ke peeche dark filter aur khoobsurat photo laga dengi */
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hunza valley/Attabad Lake.jpg');
     background-size: cover;
     background-position: center;
@@ -169,6 +168,124 @@
         }
         .packages-full-section { padding: 40px 20px; }
     }
+
+    /* ================================================
+       CATEGORY FILTER SECTION CSS
+       ================================================ */
+    .category-filter-wrap {
+        max-width: 1200px;
+        margin: 0 auto 35px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .filter-btn {
+        background-color: var(--light-gray);
+        border: none;
+        padding: 10px 22px;
+        border-radius: 25px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--black);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .filter-btn:hover {
+        background-color: var(--gold);
+    }
+    .filter-btn.active {
+        background-color: var(--black);
+        color: #ffffff;
+    }
+    .full-package-card.hide-card {
+        display: none;
+    }
+
+    /* ================================================
+       TRUST BADGES SECTION CSS
+       ================================================ */
+    .trust-badges-section {
+        padding: 60px 24px;
+        background-color: var(--light-gray);
+        text-align: center;
+    }
+    .trust-badges-grid {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+    .trust-badge-box {
+        background-color: var(--white);
+        padding: 30px 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .trust-badge-icon {
+        font-size: 1.7rem;
+        color: var(--gold);
+        margin-bottom: 10px;
+    }
+    .trust-badge-box h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--black);
+        margin-bottom: 6px;
+    }
+    .trust-badge-box p {
+        font-size: 0.85rem;
+        color: #666666;
+        line-height: 1.5;
+    }
+
+    /* ================================================
+       CUSTOM PACKAGE CTA SECTION CSS
+       ================================================ */
+    .packages-cta-section {
+        padding: 60px 24px;
+        background-color: var(--gold);
+        text-align: center;
+    }
+    .packages-cta-section h2 {
+        color: var(--black);
+        font-size: 1.7rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+    .packages-cta-btn {
+        display: inline-block;
+        background-color: var(--black);
+        color: #ffffff;
+        padding: 14px 32px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    /* ⚡ NEW SECTIONS RESPONSIVE — TABLET */
+    @media screen and (max-width: 1024px) {
+        .trust-badges-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* ⚡ NEW SECTIONS RESPONSIVE — MOBILE */
+    @media screen and (max-width: 576px) {
+        .trust-badges-grid {
+            grid-template-columns: 1fr;
+        }
+        .trust-badges-section,
+        .packages-cta-section {
+            padding: 45px 18px;
+        }
+        .filter-btn {
+            padding: 8px 16px;
+            font-size: 0.8rem;
+        }
+    }
 </style>
 
 </head>
@@ -216,10 +333,22 @@
      FULL TOURS GRID LAYOUT SECTION
      ========================================== -->
 <section class="packages-full-section">
+
+    <!-- ================================================
+         CATEGORY FILTER SECTION
+         ================================================ -->
+    <div class="category-filter-wrap">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="mountains">Mountains</button>
+        <button class="filter-btn" data-filter="lakes">Lakes</button>
+        <button class="filter-btn" data-filter="family">Family</button>
+        <button class="filter-btn" data-filter="weekend">Weekend</button>
+    </div>
+
     <div class="packages-full-grid">
         
         <!-- Card 1: Hunza Valley -->
-        <div class="full-package-card">
+        <div class="full-package-card" data-category="mountains">
             <div class="full-package-img-box">
                 <img src="hunza.jpg" alt="Hunza Valley" class="full-package-img">
                 <span class="full-package-tag">Best Seller</span>
@@ -236,7 +365,7 @@
         </div>
 
         <!-- Card 2: Skardu Adventure -->
-        <div class="full-package-card">
+        <div class="full-package-card" data-category="mountains">
             <div class="full-package-img-box">
                 <img src="skardu.jpg" alt="Skardu Tour" class="full-package-img">
                 <span class="full-package-tag">Top Rated</span>
@@ -253,7 +382,7 @@
         </div>
 
         <!-- Card 3: Swat Valley -->
-        <div class="full-package-card">
+        <div class="full-package-card" data-category="family">
             <div class="full-package-img-box">
                 <img src="swat.jpg" alt="Swat Valley" class="full-package-img">
                 <span class="full-package-tag">Trending</span>
@@ -270,7 +399,7 @@
         </div>
 
         <!-- Card 4: Naran Kaghan -->
-        <div class="full-package-card">
+        <div class="full-package-card" data-category="lakes family">
             <div class="full-package-img-box">
                 <img src="naran kaghan.jpg" alt="Naran Kaghan" class="full-package-img">
                 <span class="full-package-tag">Family Choice</span>
@@ -287,7 +416,7 @@
         </div>
 
         <!-- Card 5: Neelum Valley -->
-        <div class="full-package-card">
+        <div class="full-package-card" data-category="lakes">
             <div class="full-package-img-box">
                 <img src="kashmir rawlakot.jpg" alt="Kashmir Tour" class="full-package-img">
                 <span class="full-package-tag">Nature Lovers</span>
@@ -304,7 +433,7 @@
         </div>
 
         <!-- Card 6: Murree Patriata -->
-        <div class="full-package-card">
+        <div class="full-package-card" data-category="weekend">
             <div class="full-package-img-box">
                 <img src="murree.jpg" alt="Murree Patriata" class="full-package-img">
                 <span class="full-package-tag">Weekend Escapes</span>
@@ -321,6 +450,37 @@
         </div>
 
     </div>
+</section>
+
+<!-- ================================================
+     TRUST BADGES SECTION
+     ================================================ -->
+<section class="trust-badges-section">
+    <div class="trust-badges-grid">
+        <div class="trust-badge-box">
+            <i class="fas fa-undo-alt trust-badge-icon"></i>
+            <h3>Free Cancellation</h3>
+            <p>Cancel or reschedule up to 48 hours before departure at no extra cost.</p>
+        </div>
+        <div class="trust-badge-box">
+            <i class="fas fa-user-shield trust-badge-icon"></i>
+            <h3>Verified Guides</h3>
+            <p>All tours are led by experienced, background-checked local guides.</p>
+        </div>
+        <div class="trust-badge-box">
+            <i class="fas fa-tags trust-badge-icon"></i>
+            <h3>Best Price Guarantee</h3>
+            <p>Transparent pricing with no hidden charges added at checkout.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================================================
+     CUSTOM PACKAGE CTA SECTION
+     ================================================ -->
+<section class="packages-cta-section">
+    <h2>Can't Find What You're Looking For?</h2>
+    <a href="contact.html" class="packages-cta-btn">Request A Custom Package</a>
 </section>
 
 <!-- ==========================================
@@ -376,7 +536,7 @@
             <h4 class="footer-heading">Contact Details</h4>
             <ul class="footer-contact-list">
                 <li><span>📍</span> Office 42, Blue Area, Islamabad, Pakistan</li>
-                <li><span>📞</span> +92 318 5631266</li> <!-- Mentor ka asli contact number responsibly bina list kharab kiye update kar diya -->
+                <li><span>📞</span> +92 318 5631266</li>
                 <li><span>✉️</span> info@travelwithsaad.com</li>
                 <li><span>⏰</span> Mon - Sat: 9:00 AM - 6:00 PM</li>
             </ul>
@@ -389,10 +549,6 @@
         <p>&copy; 2026 Travel With Saad. All Rights Reserved. Designed for Internship Project.</p>
     </div>
 </footer>
-
-
-
-
 
 <script src="script.js"></script>
 
